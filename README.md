@@ -1,5 +1,7 @@
 # Blog
 
+This is a blogging web application where users can add post with a title, an image & some content, built along with authenticationa and authorization features.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
 
 ## Development server
