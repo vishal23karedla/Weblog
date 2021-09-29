@@ -1,0 +1,53 @@
+<div class="whole">
+<div class="feed">
+    <div *ngFor="let post of posts">
+        <mat-card class="post-card">
+            <div class="title">
+                <mat-card-title>
+                    {{post.title}}
+                </mat-card-title>
+            </div>
+            <hr>
+            
+            <img mat-card-image class="post-image" [src]="post.imagePath" [alt]="post.title">
+
+            <mat-card-content style="font-size: 20px;">
+                {{post.content}}
+            </mat-card-content>		
+            <mat-card-actions  *ngIf="userIsAuthenticated && userId===post.creator" >	
+                <hr>
+                <button mat-button color="accent" (click)="onEdit(post._id)">EDIT</button>
+                <button mat-button color="warn" (click)="onDelete(post._id)">DELETE</button>
+            </mat-card-actions>	
+        </mat-card>
+    </div>
+
+    <mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)" > </mat-paginator>
+    <p class="info-text mat-body-1"  *ngIf="posts?.length <= 0">No posts added yet</p>
+
+</div>
+</div>
+
+
+
+<!-- mat-expansion-panel  version-->
+<!-- <div *ngFor="let post of posts">
+    <mat-expansion-panel >
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{post.title}} 
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="post-image">
+            <img [src]="post.imagePath" [alt]="post.title">
+        </div>
+            <p>{{post.content}}</p>
+        <mat-action-row *ngIf="userIsAuthenticated && userId===post.creator "> -->
+            <!-- <button mat-button color="accent" (click)="onEdit(post._id)">EDIT</button>
+            <button mat-button color="warn" (click)="onDelete(post._id)">DELETE</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</div>
+<mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)" > </mat-paginator>
+<p class="info-text mat-body-1"  *ngIf="posts?.length <= 0">No posts added yet</p>  -->
+

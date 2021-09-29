@@ -1,0 +1,29 @@
+mat-form-field, textarea {
+    width: 100%;
+}
+
+.whole
+{
+    background: rgb(219, 146, 37,0.4);
+    width: 70%;
+    
+    height: fit-content;
+    margin: 50px auto;
+}
+
+button{
+    margin: 10px;
+}
+
+.Image-Picker{
+    visibility: hidden;
+}
+
+.image-preview{
+    height: 5 rem;
+    margin : 1 rem 0;
+}
+
+.image-preview img{
+    height: 100%;
+}
